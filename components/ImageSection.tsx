@@ -7,6 +7,7 @@ export default function ImageSection({url}) {
         <Card
             style={{
                 width: "100%",
+                borderRadius: 0
             }}
         >
             <Card.Content

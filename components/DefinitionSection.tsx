@@ -13,7 +13,11 @@ interface DefinitionSectionProps {
 export default function DefinitionSection({definitions}: Readonly<DefinitionSectionProps>) {
     return (
         <Card style={{
-            width: "100%"
+            width: "100%",
+            boxShadow: "none",
+            borderRadius: 0,
+            borderLeftColor: "black",
+            borderLeftWidth: 5
         }}>
             <Card.Content>
                 <Text variant="titleLarge">Definition</Text>

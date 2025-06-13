@@ -29,10 +29,14 @@ export default function AdaptiveDefinitionSection({term}: Readonly<AdaptiveDefin
     }, [term])
     
     return(
+        data ?
         <Card>
-            <Card.Content>
+            <Card.Content
+            
+            >
                 <Text>{data ?? "No term found."}</Text>
             </Card.Content>
-        </Card>
+        </Card> :
+        ""
     )
 }

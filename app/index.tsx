@@ -23,13 +23,10 @@ export default function Index() {
     axios.get(`${process.env.EXPO_PUBLIC_PIXABAY_API_URL}/?q=${encodeURIComponent(searchQuery)}&image_type=photo`)
           .then(response => setMedia(response.data.hits.at(0)))
   }, [searchQuery])
-    
+
   return (
       <ScrollView
         contentContainerStyle={styles.contentConatiner}
-        style={{
-      
-        }}
       >
         <SearchSection
           searchQuery={searchQuery}
@@ -65,6 +62,8 @@ const styles = StyleSheet.create({
       alignItems: "center",
       paddingHorizontal: scale(10),
       maxWidth: 1000,
-      alignSelf: "center"
+      alignSelf: "center",
+      paddingTop: verticalScale(80),
+      width: "100%"
   }
 })

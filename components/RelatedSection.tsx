@@ -8,9 +8,11 @@ interface RelatedSectionProps {
 export default function RelatedSection({title, words} : RelatedSectionProps) {
     console.log(words)
     return(
+        words?.at(0) ? 
         <Card
             style={{
-                width: "100%"
+                width: "100%",
+                borderRadius: 0
             }}
         >
             <Card.Content>
@@ -19,9 +21,10 @@ export default function RelatedSection({title, words} : RelatedSectionProps) {
                 {
                     words?.slice(0, 8).map((word, index) => (
                         <Text key={index} variant="bodyMedium">{word}</Text>
-                    )) || `No ${title?.toLowerCase()} yet.`
+                    )) ?? `No ${title?.toLowerCase()} yet.`
                 }
             </Card.Content>
-        </Card>
+        </Card> :
+        ""
     )
 }
